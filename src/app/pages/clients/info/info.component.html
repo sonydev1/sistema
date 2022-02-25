@@ -1,0 +1,159 @@
+
+  <!-- Modal Abonar -->
+  <div class="modal fade" id="Abonar" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title " id="exampleModalToggleLabel">Abonar</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form class="mt-3">
+                <div class="row">
+                    <div class="col-6 m-auto">
+                        <strong> Cantidad</strong>
+                        <input type="number" class="form-control" placeholder="5.000">
+                    </div>
+                    <div class="col-6 mt-4">
+                        <button type="submit" class="btn btn-success"(click)="onSave()">agregar</button>
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+        <div class="modal-footer">
+            
+          <button class="btn btn-danger" data-bs-target="#Abonar" data-bs-toggle="modal" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ <!-- Fin Modal Abonar -->
+
+  <!-- Modal Detalles -->
+  <div class="modal fade" id="Detalles" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title " id="exampleModalToggleLabel">Detalles</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            
+                <div class="row text-justify">
+                    <div class="col-md-10 m-auto">
+                        <strong>{{cliente.descripcion}}</strong>
+                        
+                    </div>
+                </div>
+            
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-danger" data-bs-target="#Detalles" data-bs-toggle="modal" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ <!-- Fin Modal Detalles-->
+
+ 
+<div class="container mt-2 mb-2 m-auto">
+    <div class="col align-items-end">
+        <div class="row justify-content-end">
+            <div class="col-5">
+                <button type="button" class="btn btn-success m-auto" (click)="onEditClinet()">Editar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="col-md-4 m-auto">
+        <div class="card mt-3 mb-3">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col text-star m-auto">
+                        <h4>N°{{cliente.N}}</h4>
+                    </div>
+                    <div class="col text-end">
+                        Fecha <br />
+                        <strong>{{cliente.fecha}}</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body m-auto">
+                <div class="row">
+                    <div class="col">
+                        Nonbre:
+                        <h3>{{cliente.nombres}} {{cliente.apellidos}}</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        Email:
+                        <h6>{{cliente.email}}</h6>
+                        Telefono:
+                        <h6>{{cliente.telefono}}</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        Producto:
+                        <h6>{{cliente.producto}}</h6>
+                    </div>
+                    <div class="col-6">
+                        Precio:
+                        <h6>{{cliente.valor}}</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        Pagos:
+                        <h6>{{cliente.pagos}}</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="container mb-2">
+                <div class="row mt-3">
+                    <div class="col-auto me-auto">
+                        <button type="button" class="btn btn-primary m-auto" data-bs-toggle="modal" data-bs-target="#Detalles">
+                            Detalles
+                        </button>
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-success m-auto" data-bs-toggle="modal" data-bs-target="#Abonar">
+                            Abonar
+                        </button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-12 mt-3 m-auto">
+    <div class="table-responsive scrollable">
+        <table class="table text-center table-bordered">
+            <thead class="{{ color }}">
+                <tr>
+                    <th scope="col"><strong>Fecha </strong></th>
+                    <th scope="col"><strong> Abonar</strong></th>
+                    <th scope="col"><strong> Saldo</strong></th>
+                    <th class="d-none d-sm-block" scope="col">
+                        <strong>Accion </strong>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="{{ color }}" *ngFor="let item of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 02]">
+                    <td><strong>23/02/2022</strong></td>
+                    <td class="text-success"><strong> $5.000</strong></td>
+                    <td class="text-danger"><strong>$30.000 </strong></td>
+                    <td class="btn-group d-none d-sm-block" role="group">
+                        <button type="button" class="btn btn-primary">editar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
